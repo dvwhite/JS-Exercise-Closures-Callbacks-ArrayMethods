@@ -254,9 +254,15 @@ function tallyUpDonations(runners) {
  * etc
 */
 function counterMaker() {
-  let count = -1;
+  let count = 0;
+  let countedThusFar = 0;
   function counter() {
-    ++count
+    // start incrementing after the first
+    // function call, returning zero prior
+    if (countedThusFar) {
+      count++;
+    }
+    countedThusFar++; 
     return count;
   }
   return counter;
