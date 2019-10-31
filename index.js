@@ -289,8 +289,26 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(maxValue) {
+  // Declare vars
+  let count = 0;
+  let countedThusFar = 0;
+  
+  // I used countedThusFar to make sure
+  // zero is return on first call 
+  function counter () {
+    // Don't increment until you've returned
+    // that initial zero
+    if (countedThusFar) {
+      count++;
+    }
+    // Modulo ensures count remains within
+    // the desired numeric interval
+    let modCount = count % (maxValue + 1);
+    countedThusFar++;
+    return modCount;
+  }
+  return counter;
 }
 
 /////////////// END OF CHALLENGE ///////////////
