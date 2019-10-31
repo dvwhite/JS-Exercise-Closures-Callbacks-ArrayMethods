@@ -67,7 +67,8 @@ function processLength(list, callback) {
  * should return 'barbar'.
 */
 function processLastItem(stringList, callback) {
-  return callback(stringList[stringList.length - 1]);
+  let last_idx = stringList.length - 1;
+  return callback(stringList[last_idx]);
 }
 
 /**
@@ -110,8 +111,9 @@ function processSum(numberList, callback) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback) {
+  let product = num1 * num2;
+  return callback(product);
 }
 
 /**
