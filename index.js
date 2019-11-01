@@ -163,8 +163,8 @@ function processContains(item, list, callback) {
 function processDuplicateFree(list, callback) {
   let uniqueArr = [];
   for (element of list) {
-    let found = uniqueArr.includes(element);
-    if (!found) {
+    let isInArray = uniqueArr.includes(element);
+    if (!isInArray) {
       uniqueArr.push(element);
     }
   }
